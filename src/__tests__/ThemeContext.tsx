@@ -6,14 +6,14 @@ import { ThemeConsumer, ThemeContext, ThemeProvider, IThemeContext } from '../Th
  * Test default values by rendering a context consumer without a
  * matching provider
  */
-test('NameConsumer shows default value', () => {
+test('ThemeConsumer shows default value', () => {
   render(<ThemeConsumer />)
   expect(screen.getByText(/^My Name Is:/)).toHaveTextContent(
     'My Name Is: false',
   )
 })
 
-test('NameConsumer shows value from provider', () => {
+test('ThemeConsumer shows value from provider', () => {
   const testObj: IThemeContext = { dark: true }
   render(
     <ThemeContext.Provider value={ testObj }>

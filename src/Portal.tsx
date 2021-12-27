@@ -1,10 +1,7 @@
-//  ts-ignore
 
 import React, { useEffect } from "react";
 import ReactDOM from "react-dom";
 import "./Portal.css";
-// import {render, screen} from '@testing-library/react'
-// import userEvent from '@testing-library/user-event'
 
 // this is only here for HMR/codesandbox purposes
 // in a real scenario, you'd probably just do the stuff
@@ -30,7 +27,7 @@ const Modal = (props: Props) => {
     return () => {
       modalRoot?.removeChild(el);
     };
-  }, []);
+  }, [el]);
 
   return ReactDOM.createPortal(
     <div className="wrapper" onClick={props.onClose}>
