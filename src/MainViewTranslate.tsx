@@ -2,13 +2,12 @@
 
 import * as React from "react";
 import {
-  initReactI18next,
   Trans,
   withTranslation,
 } from "react-i18next";
 
 
-const LangMain = withTranslation()((props) => {
+const MainViewTranslate = withTranslation()((props) => {
   return (
     <React.Fragment>
       <div className="App-header">
@@ -22,4 +21,4 @@ const LangMain = withTranslation()((props) => {
   );
 });
 
-export default LangMain
+export default MainViewTranslate

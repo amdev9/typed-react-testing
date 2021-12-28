@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import './App.css';
 import Modal from "./Portal";
-
 import FetchGreeting from './ReducerComp'
+import MainViewTranslate from './MainViewTranslate'
 
 function App() {
 
@@ -17,6 +17,7 @@ function App() {
         </Modal>
       )}
       <FetchGreeting />
+      <MainViewTranslate />
       <header className="App-header">
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
