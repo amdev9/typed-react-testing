@@ -11,12 +11,12 @@ if (!modalRoot) {
   document.body.appendChild(modalRoot);
 }
 
-interface Props {
-  children: JSX.Element,
+type Props = {
+  children: React.ReactNode,
   onClose: () => void,
 }
 
-const Modal = (props: Props) => {
+const Modal: React.FC<Props> = (props: Props) => {
   const el = document.createElement("div");
 
   useEffect(() => {
@@ -29,7 +29,7 @@ const Modal = (props: Props) => {
 
   return ReactDOM.createPortal(
     <div className="wrapper" onClick={props.onClose}>
-      <div className="child" onClick={(e) => e.stopPropagation()}>
+      <div className="child" onClick={(e: React.MouseEvent<HTMLInputElement>) => e.stopPropagation()}>
         {props.children}
         <hr />
         <button onClick={props.onClose}>Close</button>

@@ -6,7 +6,7 @@ import FetchGreeting from './ReducerComp'
 
 function App() {
 
-  const [showModal, setShowModal] = useState(true);
+  const [showModal, setShowModal] = useState<boolean>(true);
   const handleClose = () => setShowModal(!showModal);
   return (
     
