@@ -3,9 +3,7 @@ import React, { useEffect } from "react";
 import ReactDOM from "react-dom";
 import "./Portal.css";
 
-// this is only here for HMR/codesandbox purposes
-// in a real scenario, you'd probably just do the stuff
-// that's in the if statement.
+
 let modalRoot: HTMLElement | null = document.getElementById("modal-root");
 if (!modalRoot) {
   modalRoot = document.createElement("div");
