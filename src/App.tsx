@@ -4,10 +4,13 @@ import Modal from "./Portal";
 import FetchGreeting from './ReducerComp'
 import MainViewTranslate from './MainViewTranslate'
 
-function App() {
+
+type TCloseFunc = () => void
+
+function App(): JSX.Element {
 
   const [showModal, setShowModal] = useState<boolean>(true);
-  const handleClose = () => setShowModal(!showModal);
+  const handleClose: TCloseFunc = () => setShowModal(!showModal);
   return (
     <div className="App">
       {showModal && (
