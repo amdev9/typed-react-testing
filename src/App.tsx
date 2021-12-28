@@ -9,7 +9,6 @@ function App() {
   const [showModal, setShowModal] = useState<boolean>(true);
   const handleClose = () => setShowModal(!showModal);
   return (
-    
     <div className="App">
       {showModal && (
         <Modal onClose={handleClose}>
@@ -17,21 +16,7 @@ function App() {
         </Modal>
       )}
       <FetchGreeting />
-      <MainViewTranslate />
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-      
+      <MainViewTranslate />    
     </div>
   );
 }
