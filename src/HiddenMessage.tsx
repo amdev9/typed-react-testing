@@ -5,33 +5,46 @@ import Modal from "./Portal";
 
 type TCloseFunc = () => void;
 
+type TFade = {
+  in: boolean;
+  timeout: number;
+  onEnter: () => void;
+  onExited: () => void;
+};
+
+type Props = {
+  children: React.ReactNode;
+} & TFade;
+
+const Fade: FC<Props> = ({ children, ...props }) => {
+  const nodeRef = React.useRef<HTMLHeadingElement>(null);
+  return (
+    <CSSTransition {...props} nodeRef={nodeRef} unmountOnExit>
+      <div ref={nodeRef}>{children}</div>
+    </CSSTransition>
+  );
+};
+
 const HiddenMessage: FC = () => {
   const [showButton, setShowButton] = useState<boolean>(true);
   const [showMessage, setShowMessage] = useState<boolean>(false);
 
   const handleClose: TCloseFunc = () => setShowMessage(!showMessage);
-  const nodeRef = React.useRef(null);
 
   return (
     <>
       {showButton && <button onClick={handleClose}>Show Message</button>}
-      <CSSTransition
-        nodeRef={nodeRef}
+      <Fade
         in={showMessage}
         timeout={300}
-        unmountOnExit
         onEnter={() => setShowButton(false)}
         onExited={() => setShowButton(true)}
       >
-        <div ref={nodeRef}>
-          <Modal onClose={handleClose}>
-            Animated alert message
-            <p>
-              This alert message is being transitioned in and out of the DOM.
-            </p>
-          </Modal>
-        </div>
-      </CSSTransition>
+        <Modal onClose={handleClose}>
+          Animated alert message
+          <p>This alert message is being transitioned in and out of the DOM.</p>
+        </Modal>
+      </Fade>
     </>
   );
 };
