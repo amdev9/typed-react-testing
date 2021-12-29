@@ -19,7 +19,6 @@ const HiddenMessage: FC = () => {
         nodeRef={nodeRef}
         in={showMessage}
         timeout={300}
-        classNames="alert"
         unmountOnExit
         onEnter={() => setShowButton(false)}
         onExited={() => setShowButton(true)}
