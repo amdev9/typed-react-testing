@@ -1,32 +1,20 @@
 import React, { useState } from "react";
-import './App.css';
-import Modal from "./Portal";
-import FetchGreeting from './ReducerComp'
-import MainViewTranslate from './MainViewTranslate'
-import UpperInput from './UpperInput'
+import "./App.css";
 
-type TCloseFunc = () => void
+import FetchGreeting from "./ReducerComp";
+import MainViewTranslate from "./MainViewTranslate";
+import UpperInput from "./UpperInput";
+import HiddenMessage from "./HiddenMessage";
 
 function App(): JSX.Element {
-
-  const [showModal, setShowModal] = useState<boolean>(true);
-  const handleClose: TCloseFunc = () => setShowModal(!showModal);
   return (
     <div className="App">
-      {showModal && (
-        <Modal onClose={handleClose}>
-          <div>test</div>
-        </Modal>
-      )}
+      <HiddenMessage />
       <FetchGreeting />
-      <MainViewTranslate />    
+      <MainViewTranslate />
       <UpperInput />
-
     </div>
   );
 }
 
 export default App;
-
-
-
