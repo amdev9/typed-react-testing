@@ -3,7 +3,7 @@ import './App.css';
 import Modal from "./Portal";
 import FetchGreeting from './ReducerComp'
 import MainViewTranslate from './MainViewTranslate'
-
+import UpperInput from './UpperInput'
 
 type TCloseFunc = () => void
 
@@ -20,6 +20,8 @@ function App(): JSX.Element {
       )}
       <FetchGreeting />
       <MainViewTranslate />    
+      <UpperInput />
+
     </div>
   );
 }
