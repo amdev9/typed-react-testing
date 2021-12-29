@@ -1,6 +1,5 @@
 import * as React from 'react'
 
-
 const UpperInput: React.FC = () => {
   const [upper, setUpper] = React.useState<string>('')
   const handleChange: React.ChangeEventHandler<HTMLInputElement> = (e) => setUpper(e.currentTarget.value.toUpperCase())
