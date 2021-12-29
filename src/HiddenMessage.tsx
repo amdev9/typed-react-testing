@@ -25,9 +25,9 @@ const Fade: FC<Props> = ({ children, ...props }) => {
   );
 };
 
-const HiddenMessage: FC = () => {
+const HiddenMessage: FC<{ initialShow: boolean }> = ({initialShow = false}) => {
   const [showButton, setShowButton] = useState<boolean>(true);
-  const [showMessage, setShowMessage] = useState<boolean>(false);
+  const [showMessage, setShowMessage] = useState<boolean>(initialShow);
 
   const handleClose: TCloseFunc = () => setShowMessage(!showMessage);
 

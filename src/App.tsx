@@ -9,7 +9,7 @@ import HiddenMessage from "./HiddenMessage";
 function App(): JSX.Element {
   return (
     <div className="App">
-      <HiddenMessage />
+      <HiddenMessage initialShow={false}/>
       <FetchGreeting />
       <MainViewTranslate />
       <UpperInput />
