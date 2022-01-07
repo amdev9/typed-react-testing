@@ -1,5 +1,3 @@
-// @ts-nocheck 
-
 import * as React from "react";
 import {
   Trans,
@@ -11,8 +9,8 @@ const MainViewTranslate = withTranslation()((props) => {
   return (
     <React.Fragment>
       <div className="App-header">
-        <button onClick={() => props.i18n.changeLanguage("pt")}>pt</button>
-        <button onClick={() => props.i18n.changeLanguage("en")}>en</button>
+        <button onClick={() => props.i18n?.changeLanguage("pt")}>pt</button>
+        <button onClick={() => props.i18n?.changeLanguage("en")}>en</button>
       </div>
       <h1>
         <Trans>Welcome to React</Trans>

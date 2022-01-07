@@ -1,16 +1,17 @@
-// @ts-nocheck
+
 
 import { I18nextProvider } from "react-i18next";
 import {
   initReactI18next,
 } from "react-i18next";
 
-import { render as rtlRender, screen } from "@testing-library/react";
+import { render as rtlRender, RenderOptions, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import MainViewTranslate from "../MainViewTranslate";
 import i18n from "i18next";
 import Backend from "i18next-xhr-backend";
 import LanguageDetector from "i18next-browser-languagedetector";
+import React from "react";
 
 const resources = {
   en: {
@@ -41,8 +42,8 @@ i18n
     },
   });
 
-function render(ui, options) {
-  function Wrapper({ children }) {
+function render(ui: JSX.Element, options?: RenderOptions) {
+  function Wrapper({ children }: {children: React.ReactChild }) {
     return <I18nextProvider i18n={i18n}>{children}</I18nextProvider>;
   }
   return {
