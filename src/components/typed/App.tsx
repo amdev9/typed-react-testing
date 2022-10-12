@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import "./App.css";
 
-import FetchGreeting from "./components/ReducerComp";
-import MainViewTranslate from "./components/MainViewTranslate";
-import UpperInput from "./components/UpperInput";
-import HiddenMessage from "./components/HiddenMessage";
+import FetchGreeting from "./ReducerComp";
+import MainViewTranslate from "./MainViewTranslate";
+import UpperInput from "./UpperInput";
+import HiddenMessage from "./HiddenMessage";
 
 function App(): JSX.Element {
   return (
