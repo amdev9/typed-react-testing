@@ -1,0 +1,41 @@
+image: node:14-alpine
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - .npm/
+before_script:
+  - npm ci --cache .npm --prefer-offline
+
+after_script:
+  - echo "After script section"
+  - echo "For example you might do some cleanup here"
+
+build1:
+  stage: build
+  script:
+  - npm run build
+  artifacts:
+    expire_in: 1 week
+    paths:
+    - 'build/'
+
+
+test1:
+  stage: test
+  script:
+  - "CI=true npm test" 
+  dependencies:
+  - build1
+
+pages:
+  stage: deploy
+  script:
+  - mv public _public
+  - mv build public
+  only:
+  - master
+  artifacts:
+    paths:
+    - public
+  dependencies:
+  - build1

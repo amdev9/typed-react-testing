@@ -1,6 +1,6 @@
 import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import Modal from "../Portal";
+import Modal from "../typed/Portal";
 
 test("modal shows the children and a close button", async () => {
   // Arrange
