@@ -1,7 +1,7 @@
 
 import {render, screen} from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import UpperInput from '../typed/UpperInput'
+import UpperInput from '../UpperInput'
 
 test('sets the value to the upper version of the value', () => {
   render(<UpperInput />)

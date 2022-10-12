@@ -2,7 +2,7 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { CSSTransition } from "react-transition-group";
-import HiddenMessage from "../typed/HiddenMessage";
+import HiddenMessage from "../HiddenMessage";
 
 jest.mock("react-transition-group", () => {
   const FakeCSSTransition = jest.fn();

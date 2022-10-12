@@ -6,7 +6,7 @@ import {render, screen} from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import '@testing-library/jest-dom/extend-expect'
 
-import FetchGreeting from '../typed/ReducerComp'
+import FetchGreeting from '../ReducerComp'
 
 
 const server = setupServer(

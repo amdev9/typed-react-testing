@@ -7,7 +7,7 @@ import {
 
 import { render as rtlRender, RenderOptions, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import MainViewTranslate from "../typed/MainViewTranslate";
+import MainViewTranslate from "../MainViewTranslate";
 import i18n from "i18next";
 import Backend from "i18next-xhr-backend";
 import LanguageDetector from "i18next-browser-languagedetector";

@@ -1,6 +1,6 @@
 import * as React from 'react'
 import {render, screen} from '@testing-library/react'
-import { ThemeConsumer, ThemeContext, ThemeProvider, IThemeContext } from '../typed/ThemeContext'
+import { ThemeConsumer, ThemeContext, ThemeProvider, IThemeContext } from '../ThemeContext'
  
 /**
  * Test default values by rendering a context consumer without a

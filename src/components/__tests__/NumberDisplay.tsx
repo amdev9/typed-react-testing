@@ -1,5 +1,5 @@
 import {render, screen} from '@testing-library/react'
-import NumberDisplay from '../typed/NumberDisplay'
+import NumberDisplay from '../NumberDisplay'
 
 test('calling render with the same component on the same container does not remount', () => {
   const {rerender} = render(<NumberDisplay number={1} />)
